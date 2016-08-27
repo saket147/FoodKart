@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/restaurant"
+        android:background="#000000"
+        android:padding="1dp"
+        android:layout_alignBottom="@+id/branch_address2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restaurant Name"
+        android:id="@+id/branch_name"
+        android:textSize="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address Line1"
+        android:id="@+id/branch_address1"
+        android:textSize="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/branch_name"
+        android:layout_toEndOf="@+id/logo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address Line2"
+        android:id="@+id/branch_address2"
+        android:textSize="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/branch_address1"
+        android:layout_toEndOf="@+id/logo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        android:visibility="gone"
+        android:id="@+id/branch_id"
+        android:textSize="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/branch_address2"
+        android:layout_toEndOf="@+id/logo" />
+</RelativeLayout>
