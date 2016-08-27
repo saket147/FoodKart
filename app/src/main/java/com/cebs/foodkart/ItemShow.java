@@ -22,8 +22,8 @@ import java.util.Map;
 
 public class ItemShow extends AppCompatActivity {
 
-    TextView number;
-    Button increase,decrease;
+    TextView number,total,amount;
+    Button increase,decrease,basket;
     JSONObject jsonobject;
     JSONArray jsonarray;
     ListView listview;
@@ -47,16 +47,25 @@ public class ItemShow extends AppCompatActivity {
         item_id= Integer.parseInt(bundle.getString("id"));
 
         number=(TextView)findViewById(R.id.number);
+        total=(TextView)findViewById(R.id.Total);
+        amount=(TextView)findViewById(R.id.Amount);
         Button increase=(Button)findViewById(R.id.btnIncrease);
         final Button decrease=(Button)findViewById(R.id.btnDecrease);
         final Button cart=(Button)findViewById(R.id.cartsize);
+        basket=(Button)findViewById(R.id.btnBasket);
         increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 num = Integer.parseInt(number.getText().toString());
                 num++;
                 number.setText(num);
-                cart.setText(num);
+                amount.setText(num*(Integer.parseInt(item_price)));
+            }
+        });
+        basket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
         decrease.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +81,12 @@ public class ItemShow extends AppCompatActivity {
                     decrease.setFocusable(false);
                 }
                 number.setText(num);
+                amount.setText(num*(Integer.parseInt(item_price)));
+            }
+        });
+        basket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 cart.setText(num);
             }
         });
